@@ -1,0 +1,6 @@
+**/__data__
+**/__tests__
+**/*.test.*
+**/*.data.*
+
+pages/styleguide.vue

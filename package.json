@@ -1,0 +1,47 @@
+{
+  "name": "bricks",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sb:pull-components": "storyblok pull-components --space 292205",
+    "sb:types": "npm run sb:pull-components && storyblok-generate-ts source=./components.292205.json target=./types/storyblok",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "nuxt build",
+    "dev": "npm run sb:types && nuxt dev --host",
+    "dev:ssl": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "nuke": "del-cli '.output' 'dist' '.nuxt' 'node_modules' 'package-lock.json'",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@netlify/functions": "^2.7.0",
+    "@storyblok/nuxt": "^6.0.10",
+    "@vueuse/core": "^10.10.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.20.0",
+    "@michaelpumo/screen": "^0.0.18",
+    "@nuxt/eslint": "^0.3.13",
+    "@nuxt/image": "^1.7.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/sitemap": "^5.2.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@total-typescript/ts-reset": "^0.5.1",
+    "@types/node": "^20.14.2",
+    "del-cli": "^5.1.0",
+    "eslint": "^9.4.0",
+    "netlify-cli": "^17.26.0",
+    "nuxt": "^3.11.2",
+    "nuxt-gtag": "^2.0.6",
+    "postcss-import": "^16.1.0",
+    "prettier": "^3.3.1",
+    "storyblok-generate-ts": "^2.1.0",
+    "vite-svg-loader": "^5.1.0",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
+  }
+}

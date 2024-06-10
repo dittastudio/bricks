@@ -1,0 +1,22 @@
+@layer base {
+  :root {
+    --app-text-color: theme('colors.white');
+    --app-background-color: theme('colors.black');
+    /* --app-inner-gutter: theme('spacing.20');
+    --app-outer-gutter: theme('spacing.20');
+    --app-grid: repeat(2, minmax(0, 1fr));
+
+    @screen sm {
+      --app-grid: repeat(4, minmax(0, 1fr));
+    }
+
+    @screen md {
+      --app-outer-gutter: theme('spacing.40');
+      --app-grid: repeat(12, minmax(0, 1fr));
+    }
+
+    @screen 2xl {
+      --app-outer-gutter: theme('spacing.60');
+    } */
+  }
+}

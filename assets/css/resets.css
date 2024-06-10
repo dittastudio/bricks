@@ -1,0 +1,55 @@
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  a,
+  button {
+    &:focus-visible {
+      border-radius: theme('borderRadius.sm');
+      outline: 1px solid theme('colors.white/20%');
+      outline-offset: 3px;
+    }
+  }
+
+  button {
+    touch-action: manipulation;
+    user-select: none;
+    text-transform: inherit;
+    letter-spacing: inherit;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  svg {
+    display: block;
+    fill: currentcolor;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  input {
+    background-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
