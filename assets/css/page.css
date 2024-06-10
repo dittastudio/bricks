@@ -18,4 +18,8 @@
     line-height: theme('lineHeight.normal');
     -webkit-tap-highlight-color: transparent;
   }
+
+  p a {
+    text-decoration: underline;
+  }
 }
