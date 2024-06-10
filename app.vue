@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import '@/utilities/colophon'
-import { storyblokEditor } from '@/utilities/storyblok'
-import { screenSizes } from '@/tailwind.config'
+import { storyblokEditor, storyblokRichTextContent } from '@/utilities/storyblok'
 import type { SettingsStoryblok } from '@/types/storyblok'
 
 const route = useRoute()
@@ -26,5 +25,29 @@ useSeoMeta({
 <template>
   <div>
     <NuxtPage />
+
+    <div v-if="story?.content" class="flex flex-col gap-16 w-full px-5 pb-16 sm:px-7">
+      <address v-if="story?.content?.address && storyblokRichTextContent(story.content.address)">
+        <StoryblokRichText
+          :content="story.content.address"
+          class="w-full lg:max-w-[50%] [&>*:not(:last-child)]:mb-5 [&>p]:text-18 [&>p]:text-balance [&>p]:sm:text-27"
+        />
+      </address>
+
+      <ul v-if="story?.content?.links">
+        <li
+          v-for="item in story.content.links"
+          :key="item._uid"
+          class="text-18 sm:text-27"
+        >
+          <StoryblokLink
+            :item="item.link"
+            :title="item.title"
+          >
+            {{ item.title }}
+          </StoryblokLink>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>

@@ -14,7 +14,7 @@ const { block } = defineProps<Props>()
     <StoryblokRichText
       v-if="storyblokRichTextContent(block.text)"
       :content="block.text"
-      class="w-full lg:max-w-[50%] [&>*]:mb-5 [&>p]:text-18 [&>p]:text-balance [&>p]:sm:text-27"
+      class="w-full lg:max-w-[50%] [&>*:not(:last-child)]:mb-5 [&>p]:text-18 [&>p]:text-balance [&>p]:sm:text-27"
     />
   </div>
 </template>
