@@ -12,7 +12,7 @@ const columnSpan = computed(() => Number(block.column_end) - Number(block.column
 </script>
 
 <template>
-  <div v-editable="block" class="relative w-full h-[300px] sm:h-[460px]">
+  <div v-editable="block" class="relative w-full h-[360px] sm:h-[460px]">
     <MediaImage
       v-if="block.image && assetType === 'image'"
       class="!absolute !w-full !h-full inset-0 z-10 [&>img]:object-cover [&>img]:w-full [&>img]:!h-full [&>img]:inset-0"
