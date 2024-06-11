@@ -24,9 +24,11 @@ useSeoMeta({
 
 <template>
   <div class="relative">
-    <NuxtPage />
+    <main>
+      <NuxtPage />
+    </main>
 
-    <div v-if="story?.content" class="flex flex-col lg:flex-row gap-16 w-full px-5 pb-16 sm:px-7 lg:absolute lg:right-0 lg:bottom-0 lg:w-1/2 lg:justify-end">
+    <footer v-if="story?.content" class="flex flex-col lg:flex-row gap-16 w-full px-5 pb-16 sm:px-7 lg:absolute lg:right-0 lg:bottom-0 lg:w-1/2 lg:justify-end">
       <address v-if="story?.content?.address && storyblokRichTextContent(story.content.address)">
         <StoryblokRichText
           :content="story.content.address"
@@ -48,6 +50,6 @@ useSeoMeta({
           </StoryblokLink>
         </li>
       </ul>
-    </div>
+    </footer>
   </div>
 </template>
