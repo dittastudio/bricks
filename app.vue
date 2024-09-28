@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import '@/utilities/colophon'
-import { storyblokEditor, storyblokRichTextContent } from '@/utilities/storyblok'
 import type { SettingsStoryblok } from '@/types/storyblok'
+import { storyblokEditor, storyblokRichTextContent } from '@/utilities/storyblok'
 
 const route = useRoute()
 const story = await useStoryblokStory<SettingsStoryblok>('/settings')
